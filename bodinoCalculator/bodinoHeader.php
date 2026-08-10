@@ -8,7 +8,7 @@
 		}
 		h1 {background-color: lightsalmon;
 			color: blue; font-family:  Tahoma; text-align: center; 
-		    font-size: 20px;}
+		    }
 
 		h2 {color: green; font-family: Verdana; text-align: center;
 		    font-size: 25px;}

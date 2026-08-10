@@ -37,37 +37,58 @@ color: white; font-size:20px;
 width:150px; height:40px;}
 </style>
 </head>
+
 <body>
+<?php
+	$bodino_conn = mysqli_connect("localhost", "root", "", "bodinocalculator");
 
-<h1> LOGIN FORM </h1>
-<h2>
-<table>
-<!-- Username -->
-<tr>
-<td> <label for="bodinoUsername"> Username </label>  </td>
-<td> <input type="text" id="bodino_Username" name ="bodino_Username" required value =""></td>
-<td></td>
-</tr>
+	if (isset($_POST['bodinoLoginn'])){
+		$bodino_Username = $_POST['bodino_Username'];
+		$bodino_Password = $_POST['bodino_Password'];
+		$login = mysqli_query($bodino_conn, "SELECT * FROM bodinoregistration WHERE bodino_Username='{$bodino_Username}' AND bodino_Password='{$bodino_Password}'");
+		$row = mysqli_fetch_assoc($login);
 
-<!-- Passsword -->
-<tr>
-<td> <label for="bodinoPassword"> Password </label>  </td>
-<td> <input type="text" id="bodino_Password" name ="bodino_Passsword" required value =""></td>
-<td></td>
-</tr>
+		if (mysqli_num_rows($login) > 0){
+			$_SESSION["login"] = true;
+			header("Location: bodinoCalculator.php");
+			exit();
+		} else {
+			echo "<script> alert ('Incorrect Password and Username'); </script>";
+		}
+		}
+		/*
+	*/
+?>
 
-</table>
-<div>
-<a href="bodinoCalculator.php">
-<button class="bodinoLogin"> LOGIN </button>
-</a><a href=" ">
-<button class="bodinoClear">CLEAR</button>
-</a>
-</div>
-<div>
-<a href="bodinoRegistration.php"> <u>REGISTRATION </u> </a>
-</div>
-</h2>
+<form action="bodinoLogin.php" method="POST">
+	<h1> LOGIN FORM </h1>
+	<h2>
+	<table>
+	<!-- Username -->
+	<tr>
+	<td> <label for="bodino_Username"> Username </label>  </td>
+	<td> <input type="text" id="bodino_Username" name ="bodino_Username" required value= ""></td>
+	<td></td>
+	</tr>
 
-</body>
+	<!-- Passsword -->
+	<tr>
+	<td> <label for="bodino_Password"> Password </label>  </td>
+	<td> <input type="password" id="bodino_Password" name ="bodino_Password" required value =""></td>
+	<td></td>
+	</tr>
+
+	</table>
+	<div>
+	<button type='submit' name="bodinoLoginn" class="bodinoLogin"> LOGIN </button>
+
+	</a><a href=" ">
+	<button class="bodinoClear">CLEAR</button>
+	</a>
+	</div>
+	<div>
+	<a href="bodinoRegistration.php"> <u>REGISTRATION </u> </a>
+	</div>
+	</h2>
+	</body>
 </html>

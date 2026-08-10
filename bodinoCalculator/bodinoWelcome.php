@@ -10,6 +10,7 @@
 		h1{
 			color: blue;
 			font-size: 40px;
+			font-family:  Tahoma;
 			
 		}
 		h2 {

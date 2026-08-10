@@ -32,42 +32,52 @@ border-color:green;
 color: white; font-size:20px;
 width:150px; height:40px;}
 </style>
-<?php
-	error_reporting(0);
-	$compute = $_POST['bodino_Fnum'] + $_POST['bodino_Snum'];
-?>
 </head>
 <body>
+<?php 
+	include_once("bodinoConnection.php");
+
+	if(isset($_POST['sumCompute'])){
+		$bodino_Fnum = $_POST['bodino_Fnum'];
+		$bodino_Snum = $_POST['bodino_Snum'];
+		$bodinoSum = $bodino_Fnum + $bodino_Snum;
+		$sum = $bodinoSum ?? '';
+
+		$submitAddition = mysqli_query($bodino_conn, "INSERT INTO bodinoaddition (bodino_Fnum, bodino_Snum, sumCompute) 
+		VALUES ('$bodino_Fnum', '$bodino_Snum', '$bodinoSum')");
+	}
+		
+?>
 <h1> Addition </h1>
-<form action="bodinoAddition.php" method="POST">
-<h2>
-<table>
-<!-- Username -->
-<tr>
-<td> <label for="bodinoFnum"> First number </label>  </td>
-<td> <input type="number" id="bodino_Fnum" name ="bodino_Fnum" required value =""></td>
-<td></td>
-</tr>
+<form class="" action="bodinoAddition.php" method="POST" autocomplete="OFF">
+	<h2>
+	<table>
+	<!-- First Number -->
+	<tr>
+	<td> <label for="bodino_Fnum"> First number </label>  </td>
+	<td> <input type="number" id="bodino_Fnum" name ="bodino_Fnum" required value =""></td>
+	<td></td>
+	</tr>
 
-<!-- Passsword -->
-<tr>
-<td> <label for="bodinoSnum"> Second number </label>  </td>
-<td> <input type="number" id="bodino_Snum" name ="bodino_Snum" required value =""></td>
-<td></td>
-</tr>
+	<!-- Second Number -->
+	<tr>
+	<td> <label for="bodino_Snum"> Second number </label>  </td>
+	<td> <input type="number" id="bodino_Snum" name ="bodino_Snum" required value =""></td>
+	<td></td>
+	</tr>
 
-</table>
-<div>
-	<button type="submit" name="compute" class="bodinoCompute"> Compute </button>
-</div>
-<div>
-<tr>
-<td> <label for="bodinoSum"> The Sum of two numbers is: <?php echo $compute; ?> </label>  </td>
-<td></td>
-</tr>
-</div>
-</h2>
+	</table>
+	<div>
+		<button type="submit" name="sumCompute" class="bodinoCompute"> Compute </button>
+	</div>
+	<div>
+	<tr>
+	<td> <label for="bodinoSum"> The Sum of two numbers is:</label> </td>
+	<td> <input type="number" name="bodinoSum" id="bodinoSum" value="<?php echo $sum; ?>" readonly> </td>
+	<td></td>
+	</tr>
+	</div>
+	</h2>
 </form>
-
 </body>
 </html>

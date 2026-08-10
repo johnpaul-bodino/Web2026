@@ -34,41 +34,50 @@ width:150px; height:40px;}
 </style>
 </head>
 
-<?php
-	error_reporting(0);
-	$compute = $_POST['bodino_Fnum'] * $_POST['bodino_Snum'];
-?>
 <body>
 <h1> Multiplication </h1>
-<form action="bodinoMultiply.php" method="POST">
-<h2>
-<table>
-<!-- Username -->
-<tr>
-<td> <label for="bodinoFnum"> First number </label>  </td>
-<td> <input type="number" id="bodino_Fnum" name ="bodino_Fnum" required value =""></td>
-<td></td>
-</tr>
+<form class="" action="bodinoMultiply.php" method="POST" autocomplete="OFF">
+	<?php
+		include_once("bodinoConnection.php");
+		
+		if(isset($_POST['productCompute'])){
+			$bodino_Fnum = $_POST['bodino_Fnum'];
+			$bodino_Snum = $_POST['bodino_Snum'];
+			$bodinoProduct = $bodino_Fnum * $bodino_Snum;
+			$product = $bodinoProduct ?? '';
 
-<!-- Passsword -->
-<tr>
-<td> <label for="bodinoSnum"> Second number </label>  </td>
-<td> <input type="number" id="bodino_Snum" name ="bodino_Snum" required value =""></td>
-<td></td>
-</tr>
+			$submitProduct = mysqli_query($bodino_conn, "INSERT INTO bodinomultiplication (bodino_Fnum, bodino_Snum, productCompute)
+				VALUES ('$bodino_Fnum', '$bodino_Snum', '$bodinoProduct')");
+		}
+	?>
+	<h2>
+	<table>
+	<!-- First Number -->
+	<tr>
+	<td> <label for="bodino_Fnum"> First number </label>  </td>
+	<td> <input type="number" id="bodino_Fnum" name ="bodino_Fnum" required value =""></td>
+	<td></td>
+	</tr>
 
-</table>
-<div>
-<a href="bodinoCalculator.php">
-<button type="submit" name="compute" class="bodinoCompute"> Compute </button>
-</div>
-<div>
-<tr>
-<td> <label for="bodinoSum"> The Multiply of two numbers is: <?php echo $compute;?> </label>  </td>
-<td></td>
-</tr>
-</div>
-</h2>
+	<!-- Second Number -->
+	<tr>
+	<td> <label for="bodino_Snum"> Second number </label>  </td>
+	<td> <input type="number" id="bodino_Snum" name ="bodino_Snum" required value =""></td>
+	<td></td>
+	</tr>
+
+	</table>
+	<div>
+	<button type="submit" name="productCompute" class="bodinoCompute"> Compute </button>
+	</div>
+	<div>
+	<tr>
+	<td> <label for="bodinoProduct"> The product of two numbers is:</label> </td>
+	<td> <input type="number" name="bodinoProduct" id="bodinoProduct" value ="<?php echo $product; ?>" readonly>
+	<td></td>
+	</tr>
+	</div>
+	</h2>
 </form>
 </body>
 </html>

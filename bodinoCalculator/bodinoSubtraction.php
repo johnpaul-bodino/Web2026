@@ -33,41 +33,49 @@ color: white; font-size:20px;
 width:150px; height:40px;}
 </style>
 </head>
-<?php
-	error_reporting(0);
-	$compute = $_POST['bodino_Fnum'] - $_POST['bodino_Snum'];
-?>
 <body>
 <h1> Subtraction </h1>
-<form action="bodinoSubtraction.php" method="POST">
-<h2>
-<table>
-<!-- Username -->
-<tr>
-<td> <label for="bodinoFnum"> First number </label>  </td>
-<td> <input type="number" id="bodino_Fnum" name ="bodino_Fnum" required value =""></td>
-<td></td>
-</tr>
+<form class="" action="bodinoSubtraction.php" method="POST" autocomplete="OFF">
+	<?php
+		include_once("bodinoConnection.php");
+		
+		if(isset($_POST['differenceCompute'])){
+			$bodino_Fnum = $_POST['bodino_Fnum'];
+			$bodino_Snum = $_POST['bodino_Snum'];
+			$bodinoDifference = $bodino_Fnum - $bodino_Snum;
+			$difference = $bodinoDifference ?? '';
 
-<!-- Passsword -->
-<tr>
-<td> <label for="bodinoSnum"> Second number </label>  </td>
-<td> <input type="number" id="bodino_Snum" name ="bodino_Snum" required value =""></td>
-<td></td>
-</tr>
+			$submitDifference = mysqli_query($bodino_conn, "INSERT INTO bodinosubtraction (bodino_Fnum, bodino_Snum, differenceCompute) VALUES ('$bodino_Fnum', '$bodino_Snum', '$bodinoDifference')");
+		}
+	?>
+	<h2>
+	<table>
+	<!-- First Number -->
+	<tr>
+	<td> <label for="bodino_Fnum"> First number </label>  </td>
+	<td> <input type="number" id="bodino_Fnum" name ="bodino_Fnum" required value =""></td>
+	<td></td>
+	</tr>
 
-</table>
-<div>
-<a href="bodinoCalculator.php">
-<button type="submit" name="compute" class="bodinoCompute"> Compute </button>
-</div>
-<div>
-<tr>
-<td> <label for="bodinoSum"> The Difference of two numbers is: <?php echo $compute ?> </label>  </td>
-<td></td>
-</tr>
-</div>
-</h2>
+	<!-- Second Number -->
+	<tr>
+	<td> <label for="bodino_Snum"> Second number </label>  </td>
+	<td> <input type="number" id="bodino_Snum" name ="bodino_Snum" required value =""></td>
+	<td></td>
+	</tr>
+
+	</table>
+	<div>
+	<button type="submit" name="differenceCompute" class="bodinoCompute"> Compute </button>
+	</div>
+	<div>
+	<tr>
+	<td> <label for="bodinoDifference"> The Difference of two numbers is:</label> </td>
+	<td> <input type="number", name="bodinoDifference", id="bodinoDifference" value="<?php echo $difference; ?>" readonly> </td>
+	<td></td>
+	</tr>
+	</div>
+	</h2>
 </form>
 </body>
 </html>
