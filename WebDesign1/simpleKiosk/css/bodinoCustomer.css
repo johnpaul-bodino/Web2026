@@ -1,0 +1,82 @@
+table{
+    display: flex;
+    justify-content: center;
+    width: 15rem;
+}
+
+.customerTableorder{
+    width: 30rem;
+}
+.customerTableorder h2{
+    font-size: 20px;
+    text-align: left;
+}
+
+
+
+.orderInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+table h2{
+    margin:2px;
+    font-family: Arial;
+}
+
+td input{
+    margin: 3px;
+    width: 13rem;
+    height: 1.5rem;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+
+.customerTableorder td input{
+    margin: 3px;
+    width: 13rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 1px;
+    text-align: left;
+}
+.imageContainer{
+    width: 13rem;
+}
+
+.imageContainer .image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:13rem;
+    height: 14rem;
+    border:none
+}
+
+.bodinoOrder {
+    background-color:cadetblue; 
+    border-color:maroon;
+    color: white; 
+    font-size:20px;
+    width:150px; 
+    height:40px;
+}
+
+
+.bodinoSubmit {
+    background-color:red; 
+    border-color:green;
+    color: white; 
+    font-size:15px;
+    width:130px; 
+    height:30px;
+    margin-left: 10px;
+}
+
+
+
+

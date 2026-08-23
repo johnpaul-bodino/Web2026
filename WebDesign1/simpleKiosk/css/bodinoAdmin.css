@@ -1,0 +1,105 @@
+.bodinoViewClient {
+    background-color:red; 
+    border-color:green;
+    color: white; 
+    font-size:15px;
+    width:130px; 
+    height:30px;
+    margin-top: 23px;
+}
+
+
+
+.bodinoViewProduct {
+    background-color:red; 
+    border-color:green;
+    color: white; 
+    font-size:15px;
+    width:130px; 
+    height:30px;
+    margin-left: 10px;
+}
+
+
+.bodinoApprove {
+    background-color:tan; 
+    color: black; 
+    width:95px; 
+    height:40px;
+    font-family: Georgia;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 11px;
+    border:none;
+}
+.bodinoEdit {
+    background-color:tan; 
+    color: black; 
+    width:50px; 
+    height:30px;
+    font-family: Georgia;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 11px;
+    border:none;
+}
+
+.bodinoDelete {
+    background-color:tan; 
+    color: black; 
+    width:50px; 
+    height:30px;
+    font-family: Georgia;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 11px;
+    border:none;
+}
+
+
+
+.bodinoUpdate {
+    background-color:cadetblue; 
+    border-color:maroon;
+    color: white; 
+    font-size:20px;
+    width:150px; 
+    height:40px;
+}
+
+.bodinoCancel {
+    background-color:green; 
+    border-color: rgb(2, 57, 2);
+    color: white; 
+    font-size:20px;
+    width:150px; 
+    height:40px;
+}
+
+
+table {
+    display: flex;
+    font-family: arial, sans-serif;
+    width: 100%;
+    justify-content: center;
+}
+
+.editTable td{
+    border: none;
+    padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+th h2 {
+    text-align: left;
+    padding-right: 15px;
+    font-size: 20px;
+}
+

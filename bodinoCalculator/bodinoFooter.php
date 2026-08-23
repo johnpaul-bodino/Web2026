@@ -11,7 +11,7 @@
 			color: blue;
 			font-size: 20px;
 			
-        
+}
         p {
             color: whitesmoke;
             font-size: 20px;

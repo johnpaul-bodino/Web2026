@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosk</title>
+    <link rel="stylesheet" href="css/bodinoStyle.css">
+    <link rel="stylesheet" href="css/bodinoCustomer.css">
+
+
+</head>
+<body>
+    <div class="top-box">
+        <div class="header-left">
+            <h1>BODINO KIOSK</h1>
+            <h2>By: John Paul P. Bodino</h2>
+
+        </div>
+        <div class="header-right">
+            <button type='submit' name="bodinoLogout" class="bodinoLogout"> Logout </button>
+        </div>
+    </div>
+    <div class="middle-box">
+        <h1>Your Order</h1>
+        <div class="orderInfo">
+            <div class="imageContainer">
+                <div class="image-container">
+                    <img src="asset/tesdalogo.png">
+                </div>
+            </div>
+            <table class="customerTableorder">
+                <tr>
+                    <td> <label for="bodinoQuantity"> <h2>QUANTITY</h2> </label> </td>
+                    <td> <input type="number" name="bodinoQuantity" id="bodinoQuantity" value="" readonly> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="bodinoPrice"> <h2>PRICE</h2> </label> </td>
+                    <td> <input type="number" name="bodinoPrice" id="bodinoPrice" value="" readonly> </td>
+                </tr>
+                <tr>
+                    <td> <label for="bodinoName"> <h2>NAME OF BUYER</h2> </label> </td>
+                    <td> <input type="text" name="bodinoName" id="bodinoName" value="" readonly> </td>
+                </tr>
+                <tr>
+                    <td> <label for="bodinoNumber"> <h2>MOBILE NUMBER </h2></label> </td>
+                    <td> <input type="text" name="bodinoNumber" id="bodinoNumber" value="" readonly> </td>
+                </tr>
+                <tr>
+                    <td> <button type='submit' name="bodinoSubmit" class="bodinoSubmit"> SUBMIT </button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="bottom-box">
+        <h2>www.johnpaulbodino.com</h2>
+    </div>
+</body>
+</html>

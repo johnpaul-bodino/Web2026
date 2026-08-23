@@ -1,20 +1,20 @@
 body {
     margin: 0;
    /* padding: 20px;*/
-   background-color: gray;
+   background-color: lightgray;
 }
-
+*{
+    box-sizing: border-box;
+}
 /*grey other box*/
 
-.container{
-    border: 5px solid gray;
-}
+
 /*top box*/
 .top-box{
     display: flex;
     justify-content: flex-start;
-    width: 1516px;
-    height: 150px;
+    width: 1536px;
+    height: 153px;
     margin-bottom: 4px;
 }
 
@@ -23,7 +23,7 @@ body {
     background-color: lightsalmon;
     width: 70%;
     margin: 0px 2px 0px 0px; /* t r b l*/
-    border: 1px solid black;
+    border: 1px solid grey;
 
 }
 .header-right{
@@ -31,10 +31,9 @@ body {
     width: 30%;
     background-color: lightsalmon;
     margin: 0px 0px 0px 2px; /* t r b l*/
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    border: 2px solid grey;
+    border-left-color: black;
+
 }
 
 
@@ -45,21 +44,33 @@ body {
     background-color:yellowgreen; 
     border-color:green;
     color: white; 
-    font-size:20px;
-    width:150px; 
-    height:40px;
+    font-size:15px;
+    width:130px; 
+    height:30px;
+    margin-top: 23px;
+}
+
+.bodinoLogout {
+    background-color:green; 
+    border-color:green;
+    color: white; 
+    font-size:15px;
+    width:130px; 
+    height:30px;
+    margin-left: 10px;
 }
 
 .bodinoRegister {
     background-color:cyan; 
     border-color:green;
     color: white; 
-    font-size:20px;
-    width:150px; 
-    height:40px;
+    font-size:15px;
+    width:130px; 
+    height:30px;
+    margin-left: 10px;
 }
 
-.bodinoViewProduct {
+.bodinoView {
     background-color:tan; 
     color: black; 
     width:105px; 
@@ -77,44 +88,62 @@ body {
 
 /*Middle box*/
 .middle-box{
-    display: flex;
-    justify-content: space-evenly;
-    width: 1516px;
-    height: 505px;
-    border: 1px solid black;
+    width: 1536px;
+    height: 524px;
     background-color: goldenrod;
     margin-bottom: 4px;
+}
+.middle-box h1{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
 }
 /*containers*/
 .containers{
     height: 460px;
     width: 23%;
     background-color: whitesmoke;
-    margin: 21px 6px 6px 6px;
-    border: 1px solid black;
+    margin: 10px 6px 6px 6px;
+    border-radius: 12px;
+
 }
 /*image*/
 .image-container {
-    width: 280px;
-    height: 250px;
-    border: 1px solid black;
-    margin-bottom: 25px;
-    margin-left: 12px;
-    margin-top: 12px;
-    margin: 10px 0px 12px 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;/* t r b l*/
+    border: 1px solid grey
+
 }
 
 .image-container img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: fill;
 }
 
-.product{
-    text-align: left;
-    margin-left: 12px;
+
+.bodinoInfoContainer{
+    margin-top: 10px;
 }
 
+.bodinoLblInline{
+    text-align: left;
+    margin-left: 12px;
+
+}
+.bodinoLblInline, p {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top:8px;
+}
 
 
 
@@ -122,8 +151,8 @@ body {
 /*Bottom box*/
 .bottom-box{
     margin-top: 3px;
-    width: 1516px;
-    height: 75px;
+    width: 1536px;
+    height: 68px;
     border: 1px solid black;
     background-color: powderblue;
     display: flex;
@@ -143,4 +172,8 @@ h2{
     font-size: 25px;
     font-family: Arial, Helvetica;
     text-align: center;
+}
+
+p{
+    color: blue;
 }
