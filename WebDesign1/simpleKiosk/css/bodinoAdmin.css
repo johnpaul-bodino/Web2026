@@ -20,6 +20,15 @@
     margin-left: 10px;
 }
 
+.bodinoSubmit {
+    background-color:red; 
+    border-color:green;
+    color: white; 
+    font-size:15px;
+    width:130px; 
+    height:30px;
+}
+
 
 .bodinoApprove {
     background-color:tan; 
@@ -33,6 +42,7 @@
     border:none;
 }
 .bodinoEdit {
+    display: inline-block;
     background-color:tan; 
     color: black; 
     width:50px; 
@@ -42,9 +52,13 @@
     font-weight: 700;
     font-size: 11px;
     border:none;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 9px;
 }
 
 .bodinoDelete {
+    display: inline-block;
     background-color:tan; 
     color: black; 
     width:50px; 
@@ -54,6 +68,9 @@
     font-weight: 700;
     font-size: 11px;
     border:none;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 9px;
 }
 
 
@@ -81,7 +98,7 @@ table {
     display: flex;
     font-family: arial, sans-serif;
     width: 100%;
-    justify-content: center;
+    
 }
 
 .editTable td{

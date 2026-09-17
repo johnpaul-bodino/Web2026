@@ -1,0 +1,109 @@
+/* ---- Confirmation Modal ---- */
+        .bodinoModalOverlay{
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        .bodinoModalOverlay.active{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bodinoModalBox{
+            background-color: goldenrod;
+            border: 3px solid black;
+            border-radius: 8px;
+            padding: 30px 40px;
+            width: 400px;
+            text-align: left;
+        }
+        .bodinoModalBox h1{
+            color: blue;
+            margin-top: 0;
+            font-size: 26px;
+        }
+        .bodinoModalBox table{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .bodinoModalBox td{
+            padding: 6px 0;
+        }
+        .bodinoModalBox td.label{
+            color: green;
+            font-weight: bold;
+            font-size: 15px;
+            width: 55%;
+        }
+        .bodinoModalBox td.value{
+            color: black;
+            font-size: 15px;
+        }
+        .bodinoPaymentOptions{
+            margin-bottom: 15px;
+        }
+        .bodinoPaymentOptions label{
+            color: green;
+            font-weight: bold;
+            font-size: 15px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .bodinoPaymentOptions input[type="radio"]{
+            margin-right: 6px;
+        }
+        .bodinoTenderedRow{
+            display: none;
+            margin-bottom: 10px;
+        }
+        .bodinoTenderedRow.show{
+            display: block;
+        }
+        .bodinoTenderedRow label{
+            color: green;
+            font-weight: bold;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .bodinoTenderedRow input{
+            width: 100%;
+            padding: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .bodinoChangeRow{
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .bodinoErrorMsg{
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: none;
+        }
+        .bodinoConfirmB{
+            background-color: red;
+            border-color: green;
+            color: white;
+            font-size: 15px;
+            width: 130px;
+            height: 34px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .bodinoCancelB{
+            background-color: green;
+            border-color: green;
+            color: white;
+            font-size: 15px;
+            width: 130px;
+            height: 34px;
+            cursor: pointer;
+        }
